@@ -7,7 +7,7 @@ function rotate(appkit, args) {
       return appkit.terminal.error(err)
     }
     let securekey = addons.filter((x) => x.addon_service.name === 'securekey')
-    if(securekey.length === 1) {
+    if(securekey.length !== 1) {
       task.end('err')
       return appkit.terminal.error({code:404, message:"Unable to find an owned secure key addon on this app, if secure key is attached and not owned, re-run this on the app that owns it."})
     }
