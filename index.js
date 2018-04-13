@@ -32,7 +32,7 @@ module.exports = {
       }
     };
     appkit.args
-      .command('securekey:rotate', 'rotate the secure key on this app', {}, rotate.bind(null, appkit))
+      .command('securekey:rotate', 'rotate the secure key on this app', create_options, rotate.bind(null, appkit))
   },
   update:function(){},
   group:'securekey',
