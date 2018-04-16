@@ -11,7 +11,7 @@ function rotate(appkit, args) {
       task.end('err')
       return appkit.terminal.error({code:404, message:"Unable to find an owned secure key addon on this app, if secure key is attached and not owned, re-run this on the app that owns it."})
     }
-    appkit.api.post(null, `/apps/${args.app}/addons/${securekey.name}/actions/rotate`, (err) => {
+    appkit.api.post(null, `/apps/${args.app}/addons/${securekey[0].name}/actions/rotate`, (err) => {
       if(err) {
         task.end('err')
         return appkit.terminal.error(err)
