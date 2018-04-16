@@ -1,6 +1,7 @@
 
 function rotate(appkit, args) {
   let task = appkit.terminal.task(`Rotating the secure key on ${args.app} and attached apps`);
+  task.start()
   appkit.api.get(`/apps/${args.app}/addons`, (err, addons) => {
     if(err) {
       task.end('err')
